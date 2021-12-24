@@ -162,6 +162,7 @@ header .container {
   }
   header .container {
     flex-direction: column;
+    height: fit-content;
   }
 }
 
@@ -186,6 +187,12 @@ header .container nav .links > li > a {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  header .container nav .links > li > a {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1266,6 +1273,7 @@ header .container .mega-menu .sec-links li:not(:last-child) {
   .events .container form {
     width: 100%;
     flex-direction: column;
+    border-radius: 0;
   }
 }
 
@@ -1286,6 +1294,15 @@ header .container .mega-menu .sec-links li:not(:last-child) {
   color: white;
   font-weight: 900;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .events .container form input[type="text"],
+  .events .container form input[type="submit"] {
+    width: 100%;
+    text-align: center;
+    border-radius: 0;
+  }
 }
 
 .events .container form input[type="submit"]:hover {
@@ -1378,13 +1395,9 @@ header .container .mega-menu .sec-links li:not(:last-child) {
   background-position: left bottom;
 }
 
-.plans .container .box:nth-child(2) {
-  margin-top: -20px;
-}
-
-@media (max-width: 991px) {
+@media (min-width: 1200px) {
   .plans .container .box:nth-child(2) {
-    margin-top: 0;
+    transform: translateY(-15px);
   }
 }
 

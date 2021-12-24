@@ -19,7 +19,7 @@ btn.addEventListener("click", () => {
 const skills = document.querySelector(".skills");
 const skillsProgress = document.querySelectorAll("[data-width]");
 
-window.onscroll = function () {
+document.onscroll = function () {
   if (window.scrollY >= skills.offsetTop - 500) {
     skillsProgress.forEach((prog) => {
       prog.style.width = prog.dataset.width;
@@ -49,7 +49,7 @@ setInterval(function () {
 }, 1000);
 
 // States Animation
-const stats = document.querySelectorAll(".num");
+const stats = document.querySelectorAll(".stat");
 const statSection = document.querySelector(".stats");
 
 window.onscroll = function () {
