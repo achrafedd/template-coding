@@ -52,7 +52,7 @@ setInterval(function () {
 const stats = document.querySelectorAll(".stat");
 const statSection = document.querySelector(".stats");
 
-window.onscroll = function () {
+document.onscroll = function () {
   if (window.scrollY >= statSection.offsetTop - 300) {
     stats.forEach((stat) => startCount(stat));
   }
