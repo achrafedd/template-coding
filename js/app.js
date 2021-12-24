@@ -15,15 +15,24 @@ btn.addEventListener("click", () => {
   }
 });
 
-// skills progress Animation
+
 const skills = document.querySelector(".skills");
 const skillsProgress = document.querySelectorAll("[data-width]");
 
-document.onscroll = function () {
+const stats = document.querySelectorAll(".stat");
+const statSection = document.querySelector(".stats");
+
+window.onscroll = function () {
+  // skills progress Animation
   if (window.scrollY >= skills.offsetTop - 500) {
     skillsProgress.forEach((prog) => {
       prog.style.width = prog.dataset.width;
     });
+  }
+  
+  // States Animation
+  if (window.scrollY >= statSection.offsetTop - 300) {
+    stats.forEach((stat) => startCount(stat));
   }
 };
 
@@ -47,16 +56,6 @@ setInterval(function () {
   minutes.innerText = minute < 10 ? `0${minute}` : minute;
   seconds.innerText = second < 10 ? `0${second}` : second;
 }, 1000);
-
-// States Animation
-const stats = document.querySelectorAll(".stat");
-const statSection = document.querySelector(".stats");
-
-document.onscroll = function () {
-  if (window.scrollY >= statSection.offsetTop - 300) {
-    stats.forEach((stat) => startCount(stat));
-  }
-};
 
 function startCount(el) {
   let goal = el.dataset.goal;
